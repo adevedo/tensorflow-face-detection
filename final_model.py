@@ -99,7 +99,7 @@ model.add(Dropout(0.25))
 model.add(Dense(30))
 
 model.compile(optimizer=tf.keras.optimizers.RMSprop(), loss=tf.keras.losses.mean_squared_error, metrics=['accuracy'])
-model.fit(x=(input_X[from_i:to_i]), y=(labels[from_i:to_i]), epochs=1, batch_size=32, validation_split=0.1, verbose=1, callbacks=[prediction_history()])
+model.fit(x=(input_X[from_i:to_i]), y=(labels[from_i:to_i]), epochs=50, batch_size=32, validation_split=0.1, verbose=1, callbacks=[prediction_history()])
 
 plot_image(input_X[1501:1501+16], model.predict(input_X[1501:1501+16])[0:16] * 96, 4, 4, False)
 
